@@ -1,8 +1,12 @@
-const http = require("http");
+// const http = require("http");
+// const fs = require("fs").promises;
+const express = require("express");
+const app = express();
 
-http.createServer(function (req, res) {
-	res.write("Getting started on fs app...");
-	res.end();
-}).listen(3000);
+app.listen(3000, () => {
+	console.log("Application started and listening on port 3000");
+});
 
-console.log("Server started on port 3000");
+app.get("/", (req, res) => {
+	res.sendFile(__dirname + "/index.html");
+});
