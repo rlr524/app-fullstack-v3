@@ -4,7 +4,7 @@ const app = express();
 const WebSocketServer = require("ws").Server;
 
 app.get("/", (req, res) => {
-	res.sendFile("/index-ws.html", { root: __dirname });
+	res.sendFile("/index.html", { root: __dirname });
 });
 
 server.on("request", app);

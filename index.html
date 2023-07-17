@@ -13,4 +13,14 @@
         <h2>Hello, Madison</h2>
     </body>
 
+    <script>
+        let ws;
+        const proto = window.location.protocol === "https:" ? "wss" : "ws";
+        ws = new WebSocket(`${proto}://${window.location.host}`);
+
+        ws.onmessage = (e) => {
+            console.log(e.data);
+        }
+    </script>
+
 </html>
